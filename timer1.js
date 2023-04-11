@@ -5,11 +5,11 @@ const timer = function (numArr) {
   for (const num of numArr) {
     const delay = Number(num);
     // ignore/skip a non-number
-    if (typeof delay !== "number") {
+    if (isNaN(delay) || typeof delay !== "number") {
       continue;
     }
     // ignore/skip any numbers that are negative
-    if (isNaN(delay) || delay < 0) {
+    if (delay < 0) {
       continue;
     }
     setTimeout(() => {
